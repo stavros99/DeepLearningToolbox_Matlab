@@ -4,17 +4,23 @@ type = 2; % 1 is autoencoder (AE), 2 is classifier
 % load mnist_uint8;
 load('mnist_uint8.mat')
 
+% validation inputs
 val_x = double(train_x(50001:60000,:));
+% validation targets
 val_y = double(train_y(50001:60000,:));
 
 %if no validation exists then
 % val_x = [];
 % val_y = [];
 
+% training inputs
 train_x = double(train_x(1:50000,:));
+% training targets
 train_y = double(train_y(1:50000,:));
 
+% test inputs
 test_x  = double(test_x);
+% test targets
 test_y  = double(test_y);
 
 inputSize = size(train_x,2);
